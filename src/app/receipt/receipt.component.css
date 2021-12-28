@@ -1,0 +1,242 @@
+.grid-container-1 {
+  display: grid;
+  grid-template-columns: 4.5fr 0.5fr 1.25fr 1.25fr 0.5fr 2.5fr;
+  grid-template-rows: 1fr 3fr 1fr 3fr;
+  gap: 1px 1px;
+  grid-template-areas: "showroom-name showroom-name showroom-name . . ." 
+                       "address address address . gst-dlr-cin gst-dlr-cin" 
+                       "spares-bill spares-bill invoice invoice invoice invoice" 
+                       "to model model model model bill-reg-paymode";
+  margin-top: -1em;
+}
+.showroom-name { 
+  grid-area: showroom-name; 
+  padding-top: 1em;
+  padding-left: 1em;
+}
+
+.address {
+  grid-area: address; 
+  padding-left: 1em;
+  padding-bottom: 0.5em;
+}
+
+.gst-dlr-cin {
+  grid-area: gst-dlr-cin;
+  padding-bottom: 0.5em; 
+}
+
+.spares-bill { 
+  grid-area: spares-bill; 
+  margin-top: -4em;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  padding-left: 1em;
+  padding-top: 0.25em;
+  padding-bottom: 0.5em;
+  margin-bottom: 4.5em;
+}
+
+.invoice {
+  grid-area: invoice; 
+  margin-top: -4em;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  padding-top: 0.25em;
+  margin-bottom: 4.5em;
+}
+
+.to { 
+  grid-area: to; 
+  margin-top: -5em;
+  border-bottom: 1px solid black;
+  padding-left: 1em;
+  padding-top: 0.5em;
+  margin-bottom: 8.5em;
+}
+
+.model { 
+  grid-area: model;
+  margin-top: -5em;
+  border-bottom: 1px solid black;
+  padding-top: 0.5em;
+  margin-bottom: 8.5em;
+}
+
+.bill-reg-paymode { 
+  grid-area: bill-reg-paymode; 
+  margin-top: -5em;
+  border-bottom: 1px solid black;
+  padding-top: 0.5em;
+  margin-bottom: 8.5em;
+}
+
+.p-0-8 {
+  font-size: 0.8em; 
+  margin: -0.4em;
+}
+
+.grid-container-2 {
+  display: grid;
+  grid-template-columns: repeat(15, 1fr);
+  grid-template-rows: repeat(19, 1fr);
+  gap: 1px 1px;
+  grid-template-areas: "sno-col item-name-col item-name-col item-name-col item-name-col item-name-col hsn-col hsn-col qty-col unit-price-col unit-price-col unit-price-col amount-col amount-col amount-col" 
+                       "sno item-name item-name item-name item-name item-name hsn hsn qty unit-price unit-price unit-price amount amount amount" 
+                       "sno item-name item-name item-name item-name item-name hsn hsn qty unit-price unit-price unit-price amount amount amount" 
+                       "sno item-name item-name item-name item-name item-name hsn hsn qty unit-price unit-price unit-price amount amount amount" 
+                       "sno item-name item-name item-name item-name item-name hsn hsn qty unit-price unit-price unit-price amount amount amount"
+                       "sno item-name item-name item-name item-name item-name hsn hsn qty unit-price unit-price unit-price amount amount amount" 
+                       "total-discount-tax total-discount-tax total-discount-tax total-discount-tax total-discount-tax total-discount-tax total-discount-tax total-discount-tax total-discount-tax total-discount-tax total-discount-tax total-discount-tax total-discount-tax-price total-discount-tax-price total-discount-tax-price" 
+                       "total-discount-tax total-discount-tax total-discount-tax total-discount-tax total-discount-tax total-discount-tax total-discount-tax total-discount-tax total-discount-tax total-discount-tax total-discount-tax total-discount-tax total-discount-tax-price total-discount-tax-price total-discount-tax-price" 
+                       "total-discount-tax total-discount-tax total-discount-tax total-discount-tax total-discount-tax total-discount-tax total-discount-tax total-discount-tax total-discount-tax total-discount-tax total-discount-tax total-discount-tax total-discount-tax-price total-discount-tax-price total-discount-tax-price" 
+                       "sp sp sp sp sp sp sp sp sp sp grand-total grand-total grand-total-price grand-total-price grand-total-price" 
+                       "customer-sign-and-rules customer-sign-and-rules customer-sign-and-rules customer-sign-and-rules customer-sign-and-rules customer-sign-and-rules customer-sign-and-rules customer-sign-and-rules customer-sign-and-rules . . authorized-sign authorized-sign authorized-sign authorized-sign" 
+                       "customer-sign-and-rules customer-sign-and-rules customer-sign-and-rules customer-sign-and-rules customer-sign-and-rules customer-sign-and-rules customer-sign-and-rules customer-sign-and-rules customer-sign-and-rules . . authorized-sign authorized-sign authorized-sign authorized-sign" 
+                       "customer-sign-and-rules customer-sign-and-rules customer-sign-and-rules customer-sign-and-rules customer-sign-and-rules customer-sign-and-rules customer-sign-and-rules customer-sign-and-rules customer-sign-and-rules . . authorized-sign authorized-sign authorized-sign authorized-sign";
+  margin-top: -8.25em;
+  margin-bottom: -7em;
+}
+
+.sno-col { 
+  grid-area: sno-col; 
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  padding-left: 1em;
+}
+
+.item-name-col { 
+  grid-area: item-name-col; 
+  border-top: 1px solid black;
+  border-left: 1px solid black;
+  border-bottom: 1px solid black;
+  padding-left: 1em;
+}
+
+.hsn-col { 
+  grid-area: hsn-col;
+  border-top: 1px solid black;
+  border-left: 1px solid black;
+  border-bottom: 1px solid black;
+  padding-left: 1em;
+}
+
+.qty-col { 
+  grid-area: qty-col;
+  border-top: 1px solid black;
+  border-left: 1px solid black;
+  border-bottom: 1px solid black;
+  padding-left: 1em;
+}
+
+.unit-price-col {
+  grid-area: unit-price-col; 
+  border-top: 1px solid black;
+  border-left: 1px solid black;
+  border-bottom: 1px solid black;
+  padding-left: 1em;
+}
+
+.amount-col { 
+  grid-area: amount-col; 
+  border-top: 1px solid black;
+  border-left: 1px solid black;
+  border-bottom: 1px solid black;
+  padding-left: 1em;
+}
+
+.sno { 
+  grid-area: sno; 
+  border-bottom: 1px solid black;
+  padding-left: 1em;
+}
+
+.item-name {
+  grid-area: item-name; 
+  border-left: 1px solid black;
+  border-bottom: 1px solid black;
+  padding-left: 1em;
+}
+
+.hsn { 
+  grid-area: hsn; 
+  border-left: 1px solid black;
+  border-bottom: 1px solid black;
+  padding-left: 1em;
+}
+
+.qty { 
+  grid-area: qty; 
+  border-left: 1px solid black;
+  border-bottom: 1px solid black;
+  padding-left: 1em;
+}
+
+.unit-price { 
+  grid-area: unit-price; 
+  border-left: 1px solid black;
+  border-bottom: 1px solid black;
+  padding-left: 1em;
+}
+
+.amount { 
+  grid-area: amount; 
+  border-left: 1px solid black;
+  border-bottom: 1px solid black;
+  padding-left: 1em;
+}
+
+.total-discount-tax { 
+  grid-area: total-discount-tax;
+  border-bottom: 1px solid black;
+  padding-right: 1em;
+  text-align: right;
+  margin-bottom: 1em;
+}
+
+.total-discount-tax-price { 
+  grid-area: total-discount-tax-price;
+  border-left: 1px solid black;
+  border-bottom: 1px solid black;
+  padding-left: 1em;
+  margin-bottom: 1em;
+}
+
+.sp { 
+  grid-area: sp; 
+  border-bottom: 1px solid black;
+  padding-left: 1em;
+  margin-top: -1em;
+  margin-bottom: 1.2em;
+}
+
+.grand-total { 
+  grid-area: grand-total; 
+  border-bottom: 1px solid black;
+  padding-right: 1em;
+  text-align: right;
+  margin-top: -1em;
+  margin-bottom: 1.2em;
+}
+
+.grand-total-price { 
+  grid-area: grand-total-price; 
+  border-bottom: 1px solid black;
+  border-left: 1px solid black;
+  padding-left: 1em;
+  margin-top: -1em;
+  margin-bottom: 1.2em;
+}
+
+.customer-sign-and-rules { 
+  padding-top: 1em;
+  grid-area: customer-sign-and-rules; 
+  padding-left: 1em;
+  margin-top: -0.8em;
+}
+
+.authorized-sign { 
+  grid-area: authorized-sign; 
+  text-align: center;
+  margin-top: -0.8em;
+}

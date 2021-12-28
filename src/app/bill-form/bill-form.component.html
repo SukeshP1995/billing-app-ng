@@ -1,0 +1,141 @@
+<p>
+  <mat-toolbar color="primary">
+    <span>Biling App</span>
+    <span class="example-spacer"></span>
+    <a mat-button routerLink='/admin' style="margin-left: auto;">admin</a>
+    <button mat-icon-button routerLink=''>
+      <mat-icon>home</mat-icon>
+    </button>
+  </mat-toolbar>
+</p>
+
+<mat-card class="container" style="width: 64em;">
+  <mat-form-field>
+    <mat-label>Model</mat-label>
+    <mat-select (selectionChange)="setForm($event.value)">
+      <div *ngFor="let model of models">
+        <mat-option value="{{model}}">{{model}}</mat-option>
+      </div>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-card *ngIf="modelSelected">
+    <form [formGroup]="accessoriesForm" (ngSubmit)="onSubmit()">
+      <mat-form-field appearance="standard">
+        <mat-label>Customer name</mat-label>
+        <input matInput placeholder="Customer name" formControlName="customerName" required>
+      </mat-form-field>
+      <br>
+      <mat-form-field appearance="standard">
+        <mat-label>Model name</mat-label>
+        <input matInput placeholder="Model" formControlName="model" required>
+      </mat-form-field>
+      <br>
+      <mat-form-field appearance="standard">
+        <mat-label>Half kit unit price</mat-label>
+        <input matInput placeholder="Half kit unit price" formControlName="halfKitPrice" type="number" required>
+      </mat-form-field>
+      &nbsp;&nbsp;
+      <mat-form-field appearance="standard">
+        <mat-label>Half kit quantity</mat-label>
+        <input matInput placeholder="Half kit quantity" formControlName="halfKitQuantity" type="number" required>
+      </mat-form-field>
+      &nbsp;&nbsp;
+      <mat-form-field appearance="standard">
+        <mat-label>Half kit total price</mat-label>
+        <input matInput placeholder="Half kit total price" formControlName="halfKitTotalPrice" type="number" required>
+      </mat-form-field>
+      <br>
+      <mat-form-field appearance="standard">
+        <mat-label>Full kit unit price</mat-label>
+        <input matInput placeholder="Full kit price" formControlName="fullKitPrice" type="number" required>
+      </mat-form-field>
+      &nbsp;&nbsp;
+      <mat-form-field appearance="standard">
+        <mat-label>Full kit quantity</mat-label>
+        <input matInput placeholder="Full kit quantity" formControlName="fullKitQuantity" type="number" required>
+      </mat-form-field>
+      &nbsp;&nbsp;
+      <mat-form-field appearance="standard">
+        <mat-label>Full kit total price</mat-label>
+        <input matInput placeholder="Full kit total price" formControlName="fullKitTotalPrice" type="number" required>
+      </mat-form-field>
+      <br>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Half kit items
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <div formArrayName="halfKitItems">
+          <div *ngFor="let _ of halfKitItems.controls; let i=index">
+            <div [formGroupName]="i" >
+              <mat-form-field appearance="standard">
+                <mat-label>Accessory name</mat-label>
+                <input matInput placeholder="Name" formControlName="name" required>
+              </mat-form-field>
+            </div>
+          </div>
+        </div>
+      </mat-expansion-panel>
+      <br>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Full kit items
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <div formArrayName="fullKitItems">
+          <div *ngFor="let _ of fullKitItems.controls; let i=index">
+            <mat-card-content>
+              <div [formGroupName]="i" >
+                <mat-form-field appearance="standard">
+                  <mat-label>Accessory name</mat-label>
+                  <input matInput placeholder="Name" formControlName="name" required>
+                </mat-form-field>
+              </div>
+            </mat-card-content>
+          </div>
+        </div>
+      </mat-expansion-panel>
+      <br>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Accessories
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <div formArrayName="accessories">
+          <div *ngFor="let _ of accessories.controls; let i=index">
+            <mat-card-content>
+              <div [formGroupName]="i" >
+                <mat-form-field appearance="standard">
+                  <mat-label>Accessory name</mat-label>
+                  <input matInput placeholder="Name" formControlName="name" required>
+                </mat-form-field>
+                &nbsp;&nbsp;
+                <mat-form-field appearance="standard">
+                  <mat-label>Accessory unit price</mat-label>
+                  <input matInput placeholder="Price" formControlName="price" type="number" required>
+                </mat-form-field>
+                &nbsp;&nbsp;
+                <mat-form-field appearance="standard">
+                  <mat-label>Accessory quantity</mat-label>
+                  <input matInput placeholder="Quantity" formControlName="quantity" type="number" required>
+                </mat-form-field>
+                &nbsp;&nbsp;
+                <mat-form-field appearance="standard">
+                  <mat-label>Accessory total price</mat-label>
+                  <input matInput placeholder="Total price" formControlName="totalPrice" type="number" required>
+                </mat-form-field>
+              </div>
+            </mat-card-content>
+          </div>
+        </div>
+      </mat-expansion-panel>
+      <br>
+      <br>
+      <button mat-raised-button color="primary" [disabled]="!accessoriesForm.valid || !this.accessoriesForm.dirty" type="submit">Submit</button>
+    </form>
+  </mat-card>
+</mat-card>

@@ -1,0 +1,122 @@
+<div style="border-width:5px; border-style:double; margin-top: 2em; margin-left: 4em; margin-right: 4em;">
+  <div class="grid-container-1">
+    <div class="showroom-name">
+      <strong style="font-size: 1em; margin: -0.2em;">SREEDEVI MOTORS</strong>
+    </div>
+    <div class="address">
+      <p class="p-0-8">S.Y.No.777/2/1A, NEAR BRINDAVAN HOUSING COLONY, GNT ROAD</p>
+      <p class="p-0-8">KAVALI - 524201</p>
+      <p class="p-0-8">Phone : 240243, 245243</p>
+    </div>
+    <div class="gst-dlr-cin">
+      <p class="p-0-8">GSTIN: 37ABHFS12461ZI</p>
+      <p class="p-0-8">Dlr.code: 11776</p>
+      <p class="p-0-8">CIN:</p>
+    </div>
+    <div class="spares-bill">
+      <p style="font-size: 0.8em; margin: -0.4em;">SPARES BILL</p>
+    </div>
+    <div class="invoice">
+      <p style="font-size: 0.8em; margin: -0.4em;">INVOICE</p>
+    </div>
+    <div class="to">
+      <p class="p-0-8">To. {{ customerName }}</p>
+    </div>
+    <div class="model">
+      <p class="p-0-8">Model: {{ model }}</p>
+    </div>
+    <div class="bill-reg-paymode">
+      <p class="p-0-8">Bill No.: {{ sno }}</p>
+      <p class="p-0-8">Date: {{ today }}</p>
+      <p class="p-0-8">Pay Mode: Cash</p>
+    </div>
+  </div>
+  <div class="grid-container-2">
+    <div class="sno-col">
+      <p class="p-0-8">S.No.</p>
+    </div>
+    <div class="item-name-col">
+      <p class="p-0-8">Item Name</p>
+    </div>
+    <div class="hsn-col">
+      <p class="p-0-8">HSN / SAC</p>
+    </div>
+    <div class="qty-col">
+      <p class="p-0-8">QTY</p>
+    </div>
+    <div class="unit-price-col">
+      <p class="p-0-8">Unit Price</p>
+    </div>
+    <div class="amount-col">
+      <p class="p-0-8">Amount</p>
+    </div>
+    <div class="sno">
+      <p class="p-0-8" *ngFor="let _ of accessories; let i=index">
+        {{ i + 1 }}
+      </p>
+    </div>
+    <div class="item-name">
+      <p class="p-0-8" *ngFor="let accessory of accessories; let i=index">
+        {{ accessory.name }}
+      </p>
+    </div>
+    <div class="hsn">
+      <p class="p-0-8" *ngFor="let accessory of accessories; let i=index">
+        {{ accessory.hsn }}
+      </p>
+    </div>
+    <div class="qty">
+      <p class="p-0-8" *ngFor="let accessory of accessories; let i=index">
+        {{ accessory.quantity }}
+      </p>
+    </div>
+    <div class="unit-price">
+      <p class="p-0-8" *ngFor="let accessory of accessories; let i=index">
+        {{ accessory.price }}
+      </p>
+    </div>
+    <div class="amount">
+      <p class="p-0-8" *ngFor="let accessory of accessories; let i=index">
+        {{ accessory.totalPrice }}
+      </p>
+    </div>
+    <div class="total-discount-tax">
+      <p class="p-0-8">Total</p>
+      <div *ngIf="model != 'ENGINE OIL'; else gstNames">
+        <p class="p-0-8">Discount</p>
+        <p class="p-0-8">tax</p>
+      </div>
+      <ng-template #gstNames>
+        <p class="p-0-8">SGST@9%</p>
+        <p class="p-0-8">CGST@9%</p>
+      </ng-template>
+    </div>
+    <div class="total-discount-tax-price">
+      <p class="p-0-8">{{ totalAmount }}</p>
+      <div *ngIf="model != 'ENGINE OIL'; else gstValues">
+        <p class="p-0-8">{{ discount }}</p>
+      </div>
+      <ng-template #gstValues>
+        <p class="p-0-8">{{ gst }}</p>
+        <p class="p-0-8">{{ gst }}</p>
+      </ng-template>
+    </div>
+    <div class="sp">
+      <p class="p-0-8">Sp: {{ netAmount }}</p>
+    </div>
+    <div class="grand-total">
+      <p class="p-0-8">Grand Total:</p>
+    </div>
+    <div class="grand-total-price">
+      <p class="p-0-8">{{ netAmount }}</p>
+    </div>
+    <div class="customer-sign-and-rules">
+      <p class="p-0-8">Customer Signature:</p>
+      <p class="p-0-8"><sup>**</sup>Goods once sold cannot be taken back.<sup>**</sup> Incl. of taxes<sup>**</sup></p>
+    </div>
+    <div class="authorized-sign">
+      <h3>For SREEDEVI MOTORS</h3>
+      <p class="p-0-8">Authorized Signatory:</p>
+    </div>
+  </div>
+</div>
