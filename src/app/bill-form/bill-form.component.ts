@@ -118,10 +118,9 @@ export class BillFormComponent implements OnInit {
     let dialogRef = this.dialog.open(BillSummaryComponent, dialogConfig);
     dialogRef.afterClosed().subscribe((result) => {
       data = {...data, ...result}
-      // this.req.sale(data).subscribe((sno: any) => {
-        // this.router.navigate(['/receipt'], {state: {sno: sno['sno'], ...data}})
-      // });
-      this.router.navigate(['/receipt'], {state: {sno: "123456789", ...data}})
+      this.req.sale(data).subscribe((sno: any) => {
+        this.router.navigate(['/receipt'], {state: {sno: sno['sno'], ...data}})
+      });
       
     });
     

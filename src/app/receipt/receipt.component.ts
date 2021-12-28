@@ -26,7 +26,6 @@ export class ReceiptComponent implements OnInit {
     this.customerName = data['customerName'];
     this.model = data['model'];
     this.accessories = data["accessories"];
-    console.log(this.model);
     this.totalAmount = data["totalAmount"];
     this.discount = data["discount"];
     this.gst = data["totalAmount"] * 0.09
@@ -35,8 +34,6 @@ export class ReceiptComponent implements OnInit {
       this.netAmount = data["totalAmount"] + 2 * this.gst; 
       this.netAmount = (Math.round(this.netAmount * 100) / 100).toFixed(2)
     }
-    console.log(this.totalAmount);
-    console.log(this.netAmount);
   }
 
   convertDate(inputFormat: number): string {
