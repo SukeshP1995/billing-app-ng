@@ -26,16 +26,19 @@ export class ReceiptComponent implements OnInit {
     this.customerName = data['customerName'];
     this.model = data['model'];
     this.accessories = data["accessories"];
-    this.totalAmount = data["totalAmount"];
-    this.discount = data["discount"];
-    this.gst = data["totalAmount"] * 0.09
+    this.totalAmount = this.format(data["totalAmount"]);
+    this.discount = this.format(data["discount"]);
+    this.gst = this.format(data["totalAmount"] * 0.09)
     this.netAmount = data["netAmount"];
     if (this.model == "ENGINE OIL") {
       this.netAmount = data["totalAmount"] + 2 * this.gst; 
-      this.netAmount = (Math.round(this.netAmount * 100) / 100).toFixed(2)
+      this.netAmount = this.format(this.netAmount);
     }
   }
 
+  format(n: number): string {
+    return (Math.round(n * 100) / 100).toFixed(2)
+  }
   convertDate(inputFormat: number): string {
     function pad(s: number) { return (s < 10) ? '0' + s : s; }
     var d = new Date(inputFormat)

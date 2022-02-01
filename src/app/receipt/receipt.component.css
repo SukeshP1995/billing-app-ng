@@ -81,12 +81,12 @@
   grid-template-columns: repeat(15, 1fr);
   grid-template-rows: repeat(19, 1fr);
   gap: 1px 1px;
-  grid-template-areas: "sno-col item-name-col item-name-col item-name-col item-name-col item-name-col hsn-col hsn-col qty-col unit-price-col unit-price-col unit-price-col amount-col amount-col amount-col" 
-                       "sno item-name item-name item-name item-name item-name hsn hsn qty unit-price unit-price unit-price amount amount amount" 
-                       "sno item-name item-name item-name item-name item-name hsn hsn qty unit-price unit-price unit-price amount amount amount" 
-                       "sno item-name item-name item-name item-name item-name hsn hsn qty unit-price unit-price unit-price amount amount amount" 
-                       "sno item-name item-name item-name item-name item-name hsn hsn qty unit-price unit-price unit-price amount amount amount"
-                       "sno item-name item-name item-name item-name item-name hsn hsn qty unit-price unit-price unit-price amount amount amount" 
+  grid-template-areas: "sno-col item-name-col item-name-col item-name-col item-name-col item-name-col item-name-col hsn-col hsn-col qty-col unit-price-col unit-price-col amount-col amount-col amount-col" 
+                       "sno item-name item-name item-name item-name item-name item-name hsn hsn qty unit-price unit-price  amount amount amount" 
+                       "sno item-name item-name item-name item-name item-name item-name hsn hsn qty unit-price unit-price  amount amount amount" 
+                       "sno item-name item-name item-name item-name item-name item-name hsn hsn qty unit-price unit-price  amount amount amount" 
+                       "sno item-name item-name item-name item-name item-name item-name hsn hsn qty unit-price unit-price  amount amount amount"
+                       "sno item-name item-name item-name item-name item-name item-name hsn hsn qty unit-price unit-price  amount amount amount" 
                        "total-discount-tax total-discount-tax total-discount-tax total-discount-tax total-discount-tax total-discount-tax total-discount-tax total-discount-tax total-discount-tax total-discount-tax total-discount-tax total-discount-tax total-discount-tax-price total-discount-tax-price total-discount-tax-price" 
                        "total-discount-tax total-discount-tax total-discount-tax total-discount-tax total-discount-tax total-discount-tax total-discount-tax total-discount-tax total-discount-tax total-discount-tax total-discount-tax total-discount-tax total-discount-tax-price total-discount-tax-price total-discount-tax-price" 
                        "total-discount-tax total-discount-tax total-discount-tax total-discount-tax total-discount-tax total-discount-tax total-discount-tax total-discount-tax total-discount-tax total-discount-tax total-discount-tax total-discount-tax total-discount-tax-price total-discount-tax-price total-discount-tax-price" 

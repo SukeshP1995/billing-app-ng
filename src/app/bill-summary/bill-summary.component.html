@@ -4,17 +4,17 @@
   <form [formGroup]="form" (ngSubmit)="onSubmit()">
     <mat-form-field appearance="standard">
       <mat-label>Total amount</mat-label>
-      <input matInput placeholder="Total amount" formControlName="totalAmount" type="number" required>
+      <input matInput placeholder="Total amount" formControlName="totalAmount" type="number" step="0.01" required>
     </mat-form-field>
     <br>
     <mat-form-field appearance="standard">
       <mat-label>Discount</mat-label>
-      <input matInput placeholder="Discount" formControlName="discount" type="number" required>
+      <input matInput placeholder="Discount" formControlName="discount" type="number" step="0.01" required>
     </mat-form-field>
     <br>
     <mat-form-field appearance="standard">
       <mat-label>Net amount</mat-label>
-      <input matInput placeholder="Net amount" formControlName="netAmount" type="number" required>
+      <input matInput placeholder="Net amount" formControlName="netAmount" type="number" step="0.01" required>
     </mat-form-field>
   </form>
 </mat-dialog-content>
